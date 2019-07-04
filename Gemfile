@@ -74,3 +74,4 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem "geocoder"
 gem "figaro"
+gem 'aws-sdk-s3', require: false
