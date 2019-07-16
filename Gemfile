@@ -75,3 +75,4 @@ gem 'devise'
 gem "geocoder"
 gem "figaro"
 gem 'aws-sdk-s3', require: false
+gem 'carrierwave', '~> 1.0'

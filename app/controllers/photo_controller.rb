@@ -10,6 +10,7 @@ before_action :authenticate_user!
   private
 
   def photo_params
-    params.require(:photo).permit(:message)
+    params.require(:photo).permit(:caption, :picture)
   end
 end
+
