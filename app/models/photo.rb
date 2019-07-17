@@ -1,4 +1,4 @@
-class Photo < ApplicationRecord
+class Photos < ApplicationRecord
     belongs_to :user
     belongs_to :place
     #has_many :photo
