@@ -94,7 +94,20 @@
 <div class="col-10 offset-1">
 <h1 class="float-left">Comments</h1>
 
+<div class="row">
+  <% @place.photo.each do |photo| %>
+    <div class="col-12 col-sm-6">
+      <% if photo.picture.present? %>
+        <%= image_tag photo.picture, class: 'img-fluid' %>
+        <%-# image_tag(picture_item.thumb_image_url) unless picture_item.thumb_image.nil? -%>
 
+      <% end %>
+      <% if photo.caption.present? %>
+        <%= photo.caption %></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 
 <div class="row">
 <% @place.comments.each do |comment| %>
