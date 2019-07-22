@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_16_193136) do
+ActiveRecord::Schema.define(version: 2019_07_21_234319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,19 +22,15 @@ ActiveRecord::Schema.define(version: 2019_07_16_193136) do
     t.integer "place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "user"
-    t.string "references"
     t.index ["place_id"], name: "index_comments_on_place_id"
     t.index ["user_id", "place_id"], name: "index_comments_on_user_id_and_place_id"
   end
 
   create_table "photos", force: :cascade do |t|
-    t.integer "place_id"
     t.text "caption"
+    t.integer "place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "picture"
-    t.string "user_id"
   end
 
   create_table "places", force: :cascade do |t|
@@ -43,10 +39,8 @@ ActiveRecord::Schema.define(version: 2019_07_16_193136) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.float "latitude"
     t.float "longitude"
-    t.index ["user_id"], name: "index_places_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
