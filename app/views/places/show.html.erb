@@ -101,22 +101,39 @@
 <% end %>
 </div>
 <!--added code from TA Matt Helton and Anna Meirs conversation on slack -->
+<%
+=begin %>
 <div class="row">    
     <% @place.photos.each do |photo| %>
     <div class="col-12 col-sm-6">
         <blockquote>
           <% if photo.caption.present? %>
           <b><%= photo.caption %></b> -
+          <%= image_tag photo.picture.url %>
           <% end %>
         </blockquote>
-      </div>
+    </div>
     <% end %>
-  </div>  
+</div>
+<%
+=end %>
+
+<div class="row">
+  <% @place.photos.each do |photo| %>
+    <div class="col-12 col-sm-6">
+      <% if photo.picture.present? %>
+        <%= image_tag photo.picture.url, class: 'img-fluid' %>
+      <% end %>
+      <% if photo.caption.present? %>
+        <%= photo.caption %></p>
+      <% end %>
+    </div>
+  <% end %>
 
 <!-- Adding Photo form -->
 <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
   <%= f.input :caption %>
-  
+  <%= f.input :picture %>
   <%= f.submit "Add Photo", class: 'btn btn-primary' %>
 <% end %>
 
