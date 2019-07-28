@@ -75,9 +75,5 @@ gem 'devise'
 gem "geocoder"
 gem "figaro"
 gem 'aws-sdk-s3', require: false
-<<<<<<< HEAD
-gem 'carrierwave', '~> 1.0'
-=======
 gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
 gem 'fog-aws'
->>>>>>> 39_fixes_MIFW_acronym

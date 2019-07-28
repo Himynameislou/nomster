@@ -1,9 +1,11 @@
 <div class="booyah-box col-10 offset-1">
-  <h1><%= @place.name %></h1>
-  <i><%= @place.address %></i>
+  <h1><%= 
+  @place.name %></h1>
+  <i><%= 
+  @place.address %></i>
   <br/><br/>
-  <p><%= @place.description %></p>
-</div>
+  <p><%= 
+  @place.description %></p>
 
 
 
@@ -50,20 +52,6 @@
   </div>
 </div>
 
-<<<<<<< HEAD
-<div class="clear"></div>
-<%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
-  <%= f.input :message %>
-  <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
-  <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
-<% end %>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Add a comment
-</button>
-=======
->>>>>>> 39_fixes_MIFW_acronym
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -89,54 +77,12 @@
 </div>
 
 
-<<<<<<< HEAD
-
-<div class="col-10 offset-1">
-<h1 class="float-left">Comments</h1>
-
-<div class="row">
-  <% @place.photo.each do |photo| %>
-    <div class="col-12 col-sm-6">
-      <% if photo.picture.present? %>
-        <%= image_tag photo.picture, class: 'img-fluid' %>
-        <%-# image_tag(picture_item.thumb_image_url) unless picture_item.thumb_image.nil? -%>
-
-      <% end %>
-      <% if photo.caption.present? %>
-        <%= photo.caption %></p>
-      <% end %>
-    </div>
-  <% end %>
-</div>
-
-<div class="row">
-<% @place.comments.each do |comment| %>
-
-<div class="col-12 col-sm-6">
-  <div>
-    <blockquote>
-      <% if comment.humanized_rating.present? %>
-        <b><%= comment.humanized_rating %></b> -
-      <% end %>
-      <%= comment.message %>
-      <small><%= comment.user.email %></small>
-    </blockquote>
-  </div>
-<% end %>
-</div>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
-    Add a comment
-</button>
-=======
 <div class="col-10 offset-1">
   <h1 class ="float-left">Comments</h1>
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
   Add a Comment!
   </button>
->>>>>>> 39_fixes_MIFW_acronym
 </div>
 <div class="clear"></div>
 
@@ -193,16 +139,5 @@
 
 <% @place.photos.each do |photo| %>
 <% end %>
-
-
-<div class="clear"></div>
-<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-
-  <%= f.input :caption %>
-  <%= f.input :picture %>
-  <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
-<% end %>
-</div>
-
 
 <div class="clear"></div>

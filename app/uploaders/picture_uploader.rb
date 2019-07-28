@@ -1,8 +1,5 @@
 class PictureUploader < CarrierWave::Uploader::Base
-<<<<<<< HEAD
   storage :file
-end
-=======
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -48,4 +45,3 @@ end
   #   "something.jpg" if original_filename
   # end
 end
->>>>>>> 39_fixes_MIFW_acronym
