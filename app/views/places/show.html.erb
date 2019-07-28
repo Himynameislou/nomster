@@ -38,9 +38,10 @@
 
   <div id="map"></div>
   <% end %>
-<br /><br />
+</div>
 
 
+<div class="col-10 offset-1">
   <div class="float-right">
     <% if current_user && current_user == 
       @place.user %>
@@ -53,7 +54,8 @@
 </div>
 
 
-<!-- Modal -->
+
+<!-- myModal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -77,11 +79,49 @@
 </div>
 
 
-<div class="col-10 offset-1">
-  <h1 class ="float-left">Comments</h1>
+<!-- myModal2 -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add a Photo</h5>
+      </div>
+      <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+        <div class="modal-body">
+          <%= f.input :caption %>
+          <%= f.input :picture %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= f.submit "Add Photo", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+
+      <% @place.photos.each do |photo| %>
+      <% end %>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-9 offset-1">
+  <h1 class ="float-left">Comments & Photos</h1>
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
+  <button type="button" class="btn btn-primary btn-md float-right" data-toggle="modal" data-target="#myModal">
   Add a Comment!
+  </button>
+</div>
+
+
+
+<!-- Adding Photo Modal -->
+<div class="col-8 offset-1">
+  <!-- <h1 class ="float-left">Comments</h1> -->
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-md float-right" data-toggle="modal" data-target="#myModal2">
+  Add a Photo!
   </button>
 </div>
 <div class="clear"></div>
@@ -131,6 +171,8 @@
   <% end %>
 
 <!-- Adding Photo form -->
+<%
+=begin %>
 <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
   <%= f.input :caption %>
   <%= f.input :picture %>
@@ -141,3 +183,5 @@
 <% end %>
 
 <div class="clear"></div>
+<%
+=end %>
