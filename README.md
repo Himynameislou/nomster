@@ -1,24 +1,19 @@
-# README
+# Nomster
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Nomster is a Yelp clone that integrates with the Google Map API and includes features like user comments, star ratings, image uploading, and user authentication.
 
-Things you may want to cover:
+Technologies used:
 
-* Ruby version
+* Ruby
 
-* System dependencies
+* Ruby on Rails
 
-* Configuration
+* Object Oriented Programing
 
-* Database creation
+* Google Maps API
 
-* Database initialization
+* User Authentication
 
-* How to run the test suite
+* Star ratings
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* User Comments
