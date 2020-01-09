@@ -2,7 +2,7 @@
 
 Nomster is a Yelp clone that integrates with the Google Map API and includes features like user comments, star ratings, image uploading, and user authentication.
 
-Technologies used:
+## Technologies used:
 
 * Ruby
 
